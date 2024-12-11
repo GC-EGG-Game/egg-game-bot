@@ -6,6 +6,8 @@ const main = async () => {
 
   const bot = new Telegraf(process.env.BOT_TOKEN!);
 
+  bot.telegram.setMyCommands([{ command: "start", description: "게임 시작" }]);
+
   bot.command("start", async (ctx) => {
     await ctx.reply("GOSTON : Battle in Korea", {
       reply_markup: {
