@@ -9,7 +9,8 @@ const main = async () => {
   bot.telegram.setMyCommands([{ command: "start", description: "게임 시작" }]);
 
   bot.command("start", async (ctx) => {
-    await ctx.reply("GOSTON : Battle in Korea", {
+    await ctx.sendPhoto("https://goston.eatcocoa.xyz/static/icon.png", {
+      caption: "GOSTON : Battle in Korea",
       reply_markup: {
         inline_keyboard: [
           [
@@ -21,6 +22,18 @@ const main = async () => {
         ],
       },
     });
+    // await ctx.reply("GOSTON : Battle in Korea", {
+    //   reply_markup: {
+    //     inline_keyboard: [
+    //       [
+    //         {
+    //           text: "게임 시작!",
+    //           web_app: { url: process.env.WEB_APP_URL! },
+    //         },
+    //       ],
+    //     ],
+    //   },
+    // });
   });
 
   bot.launch();
